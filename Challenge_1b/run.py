@@ -1,6 +1,5 @@
 import os
 import json
-import argparse
 from datetime import datetime
 
 # Import the functions from your main analysis script.

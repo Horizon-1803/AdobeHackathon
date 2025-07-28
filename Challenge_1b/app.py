@@ -1,8 +1,5 @@
-import argparse
 import json
 import os
-import re
-import uuid
 import statistics
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
