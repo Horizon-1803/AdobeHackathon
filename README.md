@@ -40,6 +40,52 @@ Your_Project_Folder/
 └── ... (and so on for other collections)  
 ```
 
+Here are the instructions to add to your documentation for the Docker setup and execution:
+
+---
+
+## Docker Setup and Execution
+
+### Dockerfile Instructions
+
+The provided Dockerfile creates an optimized container for running the document analysis tool. Here's what each step does:
+
+1. **Base Image**: Uses an official Python 3.11 image on a slim Linux (amd64) base to keep the image small
+2. **Working Directory**: Sets `/app` as the working directory inside the container
+3. **Dependencies**: Copies just the requirements file first (optimizes Docker layer caching)
+4. **Installation**: Installs all Python dependencies from requirements.txt
+5. **Application Code**: Copies the entire project into the container
+6. **Execution**: Defines the default command to run the analysis
+
+### Building and Running the Container
+
+1. First, create a `requirements.txt` file in your project directory with these contents:
+```
+ollama
+sentence-transformers
+PyMuPDF
+```
+
+2. Build the Docker image (run from your project directory):
+```bash
+docker build -t document-analysis .
+```
+
+3. Run the container with volume mounting to access your PDF collections:
+```bash
+docker run -v /path/to/your/collections:/app document-analysis
+```
+
+Important notes about the volume mount (`-v` flag):
+- Replace `/path/to/your/collections` with the absolute path to your directory containing the Collection folders
+- The path format differs by operating system:
+  - Windows: `D:/adobe-hackathon/Challenge_1b:/app`
+  - Mac/Linux: `/Users/yourname/adobe-hackathon/Challenge_1b:/app`
+- The container will search for collections in `/app` (mapped to your local directory)
+
+
+
+
 ## Setup and Execution
 Follow these steps to set up your environment and run the analysis.
 
@@ -128,3 +174,6 @@ This multi-stage process ensures the final output is not just a list of keywords
 ✅ Offline execution  
 ✅ Fast processing through hybrid approach  
 ✅ Meets all challenge constraints
+
+
+
