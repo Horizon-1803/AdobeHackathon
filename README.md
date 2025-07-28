@@ -119,21 +119,12 @@ This multi-stage process ensures the final output is not just a list of keywords
 ### Model Size (Under 1GB)
 | Model | Size | Purpose |
 |-------|------|---------|
-| tinyllama:1.1b-chat-v0.6-q2_K | ~638 MB | Persona-driven ranking |
+| tinyllama:1.1b-chat-v0.6-q2_K | ~484 MB | Persona-driven ranking |
 | cross-encoder/ms-marco-MiniLM-L-6-v2 | ~87 MB | Semantic search |
-| **Total** | **~725 MB** | Well below 1GB limit |
+| **Total** | **~ 600MB** | Well below 1GB limit |
 
 ### Performance Features
 ✅ CPU-only operation  
 ✅ Offline execution  
 ✅ Fast processing through hybrid approach  
 ✅ Meets all challenge constraints
-```
-
-This version:
-- Uses consistent heading levels
-- Adds a table for model size comparison
-- Includes checkmarks for performance features
-- Maintains all code blocks with proper syntax highlighting
-- Uses markdown formatting for better readability
-- Keeps all the original content while making it more visually organized
