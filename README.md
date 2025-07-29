@@ -84,7 +84,7 @@ Important notes about the volume mount (`-v` flag):
 - The container will search for collections in `/app` (mapped to your local directory)
 
 
-
+NOTE : The first execution might take some time since it will download the tinyllama model which is approx 484 MB, after download it will work in the desired time <60s as mentioned in the requirements.
 
 ## Setup and Execution
 Follow these steps to set up your environment and run the analysis.
